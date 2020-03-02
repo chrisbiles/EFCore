@@ -17,7 +17,7 @@ namespace Data
 
 		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 		{
-			optionsBuilder.UseSqlServer("");
+			optionsBuilder.UseSqlServer("Server=(local);Database=efcorecommercedb;Trusted_Connection=True;MultipleActiveResultSets=False;");
 		}
 
 		/* ----- DB SETS ----- */

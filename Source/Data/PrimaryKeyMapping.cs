@@ -10,6 +10,7 @@ namespace Data
 		{
 			// Primary Key
 			modelBuilder.HasKey(t => t.Id);
+
 			modelBuilder.Property(t => t.Id)
 				.IsRequired()
 				.ValueGeneratedOnAdd()

@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32210.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Model", "Models\Model.csproj", "{13D8FA45-9338-419B-A4B2-218D94E9E698}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Model", "Model\Model.csproj", "{13D8FA45-9338-419B-A4B2-218D94E9E698}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data", "Data\Data.csproj", "{4F070639-5F6C-4F0D-81B2-80E18724E479}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test", "Tests\Test.csproj", "{11DAF183-1DCA-4817-A15A-DE0617614A6A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test", "Test\Test.csproj", "{11DAF183-1DCA-4817-A15A-DE0617614A6A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{33829C3F-C618-4C4D-AF00-FD736A60F404}"
 EndProject

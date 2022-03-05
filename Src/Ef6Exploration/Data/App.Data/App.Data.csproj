@@ -23,6 +23,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Core\Data\Core.Model\Core.Model.csproj" />
+    <ProjectReference Include="..\..\Core\Helpers\Helper.Configuration\Helper.Configuration.csproj" />
   </ItemGroup>
 
 </Project>

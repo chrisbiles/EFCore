@@ -1,4 +1,5 @@
 ﻿using Core.Model.Interface.Data;
+using Helper.Configuration;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
 
@@ -10,9 +11,7 @@ namespace App.Data
 
         public AppContext()
         {
-
-            //Todo - fix this
-            //_connectionString = Settings.GetSetting("BusinessConnectionString");
+            _connectionString = Settings.GetSetting("AppConnectionString");
         }
 
         public AppContext(string connectionString)

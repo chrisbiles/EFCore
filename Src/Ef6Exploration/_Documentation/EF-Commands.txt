@@ -1,0 +1,33 @@
+NOTE: Brackets are not required for the commands - just used to show where specific values should be placed.
+
+Add new migration
+-----------------
+Add-Migration [MIGRATION-NAME] -StartupProject [PROJECT-NAME] -Context [CONTEXT-NAME] -Verbose
+
+Add-Migration InitialSchema -StartupProject App.Data -Context AppContext -Verbose
+
+
+Update Db
+---------
+Update-Database -StartupProject [Startup Project] -Context [Context] -Verbose
+
+Update-Database -StartupProject App.Data -Context AppContext -Verbose
+
+
+Remove migration
+----------------
+Remove-Migration [MIGRATION-NAME] -StartupProject App.Data -Verbose
+
+
+Revert migration from database
+------------------------------
+Update-Database [MigrationNameYouWantToRevertBackTo] -StartupProject [Startup Project] -Context [Context] -Verbose
+
+NOTE: MigrationNameYouWantToRevertBackTo - value is typically the one before the currently applied one.
+
+NOTE: If you want to revert to the beginning - Command is Update-Database 0
+
+
+SQL Command to Make Diagrams Work if you're using LocalDb
+---------------------------------------------------------
+ALTER AUTHORIZATION ON DATABASE::[Database Name] TO [sa]

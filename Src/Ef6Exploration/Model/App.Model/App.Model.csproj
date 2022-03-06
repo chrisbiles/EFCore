@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <Folder Include="Enum\" />
+    <Folder Include="Messaging\" />
   </ItemGroup>
 
 </Project>

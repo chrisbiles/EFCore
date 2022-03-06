@@ -1,4 +1,5 @@
 ﻿using App.Model.Enum;
+using App.Model.Messaging;
 using Core.Model.Interface;
 using Core.Model.Interface.Data;
 using Helper.Utility;
@@ -53,4 +54,8 @@ public class Account: IPerson, IPrimaryKeyGuid
 
     public Guid? CustomerId { get; set; }
     public virtual Customer Customer { get; set; }
+
+    public virtual ICollection<AccountAddress> AddressBook { get; set; } = new List<AccountAddress>();
+    public virtual ICollection<AccountMessage> Messages { get; set; } = new List<AccountMessage>();
+    public virtual ICollection<AccountToGroup> AccountsToGroups { get; set; } = new List<AccountToGroup>();
 }

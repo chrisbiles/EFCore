@@ -1,10 +1,9 @@
-﻿namespace Core.Model.Enum
+﻿namespace Core.Model.Enum;
+
+public enum AddressType
 {
-    public enum AddressType
-    {
-        Personal,
-        Work,
-        Store,
-        DropShip
-    }
+    Personal,
+    Work,
+    Store,
+    DropShip
 }

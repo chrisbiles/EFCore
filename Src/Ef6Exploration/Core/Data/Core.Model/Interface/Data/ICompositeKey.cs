@@ -1,7 +1,6 @@
-﻿namespace Core.Model.Interface.Data
+﻿namespace Core.Model.Interface.Data;
+
+public interface ICompositeKey : ICore
 {
-    public interface ICompositeKey : ICore
-    {
-        
-    }
+    
 }

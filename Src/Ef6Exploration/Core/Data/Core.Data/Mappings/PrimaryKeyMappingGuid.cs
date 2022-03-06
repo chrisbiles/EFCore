@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Core.Data.Mappings
 {
-	public class PrimaryKeyMappingGuid<TEntity> : IEntityTypeConfiguration<TEntity> where TEntity : class, IPrimaryKeyGuid
+    public class PrimaryKeyMappingGuid<TEntity> : IEntityTypeConfiguration<TEntity> where TEntity : class, IPrimaryKeyGuid
     {
         public void Configure(EntityTypeBuilder<TEntity> modelBuilder)
         {

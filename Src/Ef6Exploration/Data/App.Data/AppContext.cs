@@ -1,4 +1,7 @@
-﻿using Core.Model.Interface.Data;
+﻿using App.Data.Maps.Commerce;
+using App.Model.Commerce;
+using Core.Model.Interface.Data;
+using Helper.Configuration;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
 
@@ -10,9 +13,7 @@ namespace App.Data
 
         public AppContext()
         {
-
-            //Todo - fix this
-            //_connectionString = Settings.GetSetting("BusinessConnectionString");
+            _connectionString = Settings.GetSetting("AppConnectionString");
         }
 
         public AppContext(string connectionString)
@@ -35,14 +36,16 @@ namespace App.Data
         }
 
         /* ----- DB SETS ----- */
-
-
+        //Commerce
+        public DbSet<Account> Accounts { get; set; }
+        public DbSet<Customer> Customers { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             /* ----- MAPPINGS ----- */
-
-
+            //Commerce
+            modelBuilder.ApplyConfiguration(new AccountMap(modelBuilder.Entity<Account>()));
+            modelBuilder.ApplyConfiguration(new CustomerMap(modelBuilder.Entity<Customer>()));
 
 
         }

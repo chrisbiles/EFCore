@@ -1,8 +1,7 @@
-﻿namespace Core.Model.Interface.Data
+﻿namespace Core.Model.Interface.Data;
+
+public interface ICore
 {
-    public interface ICore
-    {
-        DateTime Created { get; set; } 
-        DateTime LastModifiedDateTime { get; set; }
-    }
+    DateTime Created { get; set; } 
+    DateTime LastModifiedDateTime { get; set; }
 }

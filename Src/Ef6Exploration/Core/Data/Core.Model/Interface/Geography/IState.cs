@@ -1,11 +1,10 @@
 ﻿using Core.Model.Interface.Data;
 
-namespace Core.Model.Interface.Geography
+namespace Core.Model.Interface.Geography;
+
+public interface IState : IPrimaryKeyInt
 {
-    public interface IState : IPrimaryKeyInt
-    {
-        string Name { get; set; }
-        string Code { get; set; }
-        string Type { get; set; }
-    }
+    string Name { get; set; }
+    string Code { get; set; }
+    string Type { get; set; }
 }

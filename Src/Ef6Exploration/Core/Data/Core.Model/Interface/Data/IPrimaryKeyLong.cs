@@ -1,7 +1,6 @@
-﻿namespace Core.Model.Interface.Data
+﻿namespace Core.Model.Interface.Data;
+
+public interface IPrimaryKeyLong : ICore
 {
-    public interface IPrimaryKeyLong : ICore
-    {
-        long Id { get; set; }
-    }
+    long Id { get; set; }
 }

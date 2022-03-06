@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
+    <Nullable>disable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
@@ -22,7 +22,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Core\Data\Core.Data\Core.Data.csproj" />
     <ProjectReference Include="..\..\Core\Data\Core.Model\Core.Model.csproj" />
+    <ProjectReference Include="..\..\Core\Helpers\Helper.Configuration\Helper.Configuration.csproj" />
+    <ProjectReference Include="..\..\Model\App.Model\App.Model.csproj" />
   </ItemGroup>
 
 </Project>

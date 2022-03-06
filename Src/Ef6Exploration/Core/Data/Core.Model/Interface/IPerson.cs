@@ -1,9 +1,8 @@
-﻿namespace Core.Model.Interface
+﻿namespace Core.Model.Interface;
+
+public interface IPerson
 {
-    public interface IPerson
-    {
-        string FirstName { get; set; }
-        string LastName { get; set; }
-        string NameConcatenation { get; }
-    }
+    string FirstName { get; set; }
+    string LastName { get; set; }
+    string NameConcatenation { get; }
 }

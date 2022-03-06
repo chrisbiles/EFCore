@@ -1,7 +1,6 @@
-﻿namespace Core.Model.Interface.Data
+﻿namespace Core.Model.Interface.Data;
+
+public interface IPrimaryKeyInt : ICore
 {
-    public interface IPrimaryKeyInt : ICore
-    {
-        int Id { get; set; }
-    }
+    int Id { get; set; }
 }

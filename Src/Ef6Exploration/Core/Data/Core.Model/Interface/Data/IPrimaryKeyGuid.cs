@@ -1,7 +1,6 @@
-﻿namespace Core.Model.Interface.Data
+﻿namespace Core.Model.Interface.Data;
+
+public interface IPrimaryKeyGuid : ICore
 {
-    public interface IPrimaryKeyGuid : ICore
-    {
-        Guid Id { get; set; }
-    }
+    Guid Id { get; set; }
 }

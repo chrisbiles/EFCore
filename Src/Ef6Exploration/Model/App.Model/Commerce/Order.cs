@@ -28,4 +28,5 @@ public class Order : ICommerceBase
     public virtual Cart Cart { get; set; }
 
     public virtual ICollection<OrderItem> OrderItems { get; set; } = new List<OrderItem>();
+    public virtual ICollection<Invoice> Invoices { get; set; } = new List<Invoice>();
 }

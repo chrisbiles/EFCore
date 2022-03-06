@@ -1,7 +1,7 @@
 ﻿using App.Model.Commerce;
 using Core.Data.Mappings;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace App.Data.Maps.Commerce;
 

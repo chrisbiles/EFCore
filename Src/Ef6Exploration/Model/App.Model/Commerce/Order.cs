@@ -1,10 +1,9 @@
 ﻿using App.Model.Enum;
 using Core.Model.Interface.Commerce;
-using Core.Model.Interface.Data;
 
 namespace App.Model.Commerce;
 
-public class Order : ICommerceBase, IPrimaryKeyGuid
+public class Order : ICommerceBase
 {
     public DateTime Created { get; set; }
     public DateTime LastModifiedDateTime { get; set; }

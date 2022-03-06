@@ -1,6 +1,8 @@
-﻿namespace Core.Model.Interface.Commerce;
+﻿using Core.Model.Interface.Data;
 
-public interface ICommerceBase
+namespace Core.Model.Interface.Commerce;
+
+public interface ICommerceBase : IPrimaryKeyGuid
 {
     float Discount { get; set; }
     float LineItemSum { get; set; }

@@ -1,6 +1,6 @@
 ﻿namespace App.Data.Maps.Commerce;
 
-internal class WalletMap
+internal class ProductMap
 {
     
 }

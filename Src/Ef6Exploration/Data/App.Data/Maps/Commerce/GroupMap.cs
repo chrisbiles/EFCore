@@ -5,9 +5,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace App.Data.Maps.Commerce;
 
-public class GroupMap : PrimaryKeyMappingGuid<Group>
+internal class GroupMap : PrimaryKeyMappingGuid<Group>
 {
-    public GroupMap(EntityTypeBuilder<Group> modelBuilder)
+    internal GroupMap(EntityTypeBuilder<Group> modelBuilder)
     {
         modelBuilder.ToTable("Group");
 

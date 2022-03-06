@@ -58,4 +58,5 @@ public class Account: IPerson, IPrimaryKeyGuid
     public virtual ICollection<AccountAddress> AddressBook { get; set; } = new List<AccountAddress>();
     public virtual ICollection<AccountMessage> Messages { get; set; } = new List<AccountMessage>();
     public virtual ICollection<AccountToGroup> AccountsToGroups { get; set; } = new List<AccountToGroup>();
+    public virtual ICollection<Cart> Carts { get; set; } = new List<Cart>();
 }

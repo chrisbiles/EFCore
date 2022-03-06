@@ -5,9 +5,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace App.Data.Maps.Commerce;
 
-public class AccountToGroupMap : CompositeKeyMapping<AccountToGroup>
+internal class AccountToGroupMap : CompositeKeyMapping<AccountToGroup>
 {
-    public AccountToGroupMap(EntityTypeBuilder<AccountToGroup> modelBuilder)
+    internal AccountToGroupMap(EntityTypeBuilder<AccountToGroup> modelBuilder)
     {
         modelBuilder.ToTable("AccountToGroup");
 

@@ -5,9 +5,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace App.Data.Maps.Commerce;
 
-public class AccountAddressMap : PrimaryKeyMappingGuid<AccountAddress>
+internal class AccountAddressMap : PrimaryKeyMappingGuid<AccountAddress>
 {
-    public AccountAddressMap(EntityTypeBuilder<AccountAddress> modelBuilder)
+    internal AccountAddressMap(EntityTypeBuilder<AccountAddress> modelBuilder)
     {
         modelBuilder.ToTable("AccountAddress");
 

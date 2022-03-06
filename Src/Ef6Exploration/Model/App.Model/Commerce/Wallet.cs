@@ -43,7 +43,7 @@ public class Wallet : IPrimaryKeyGuid, IPerson
         set => _cardExpiration = value.CardExpirationValue();
     }
     public string StripePaymentMethodId { get; set; }
-    public bool IsActive { get; set; }
+    public bool? IsActive { get; set; }
 
     public Guid CustomerId { get; set; }
     public virtual Customer Customer { get; set; }

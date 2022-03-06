@@ -29,7 +29,7 @@ public class AccountAddress : IPrimaryKeyGuid, IPerson, IAddress
     public double? Longitude { get; set; }
     public AddressType? AddressType { get; set; }
     public bool AddressVerified { get; set; }
-    public bool IsActive { get; set; }
+    public bool? IsActive { get; set; }
 
     public Guid AccountId { get; set; }
     public virtual Account Account { get; set; }

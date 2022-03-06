@@ -50,7 +50,7 @@ public class Account: IPerson, IPrimaryKeyGuid
     }
     public FavoriteColor? FavoriteColor { get; set; }
     public bool AllowEmailMarketing { get; set; }
-    public bool IsActive { get; set; }
+    public bool? IsActive { get; set; }
 
     public Guid? CustomerId { get; set; }
     public virtual Customer Customer { get; set; }

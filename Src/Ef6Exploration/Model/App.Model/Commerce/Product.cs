@@ -30,7 +30,7 @@ public class Product : IPrimaryKeyGuid
 
         set => _stripeStatementDescriptor = value.ValidateMaxSize(22);
     }
-    public bool IsActive { get; set; }
+    public bool? IsActive { get; set; }
     public bool NotForSale { get; set; }
 
     public virtual ICollection<ProductImage> ProductImages { get; set; } = new List<ProductImage>();

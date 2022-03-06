@@ -15,7 +15,15 @@ namespace App.Data
 
         public AppContext()
         {
-            _connectionString = Settings.GetSetting("AppConnectionString");
+            //Commented this out because an older Config file approach I've used for testing is having problems with .Net 6.  Will figure it out, but
+            //not going to get hung up on the matter at this time
+            //_connectionString = Settings.GetSetting("AppConnectionString");
+
+            //Using LocalDb
+            _connectionString = "Server=(LocalDb)\\MSSQLLocalDB;Database=EfCoreTestDb;Trusted_Connection=True;MultipleActiveResultSets=False;Connection Timeout=30;";
+
+            //Using a local Sql Sever
+            //_connectionString = "Server=.;Database=EfCoreTestDb;Trusted_Connection=True;MultipleActiveResultSets=False;Connection Timeout=30;";
         }
 
         public AppContext(string connectionString)

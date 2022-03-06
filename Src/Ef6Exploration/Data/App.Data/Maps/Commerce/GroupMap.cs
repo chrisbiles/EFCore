@@ -5,27 +5,24 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace App.Data.Maps.Commerce;
 
-internal class AccountAddressMap : PrimaryKeyMappingGuid<AccountAddress>
+internal class GroupMap : PrimaryKeyMappingGuid<Group>
 {
-    internal AccountAddressMap(EntityTypeBuilder<AccountAddress> modelBuilder)
+    internal GroupMap(EntityTypeBuilder<Group> modelBuilder)
     {
-        modelBuilder.ToTable("AccountAddress");
+        modelBuilder.ToTable("Group");
 
         //Properties
-        modelBuilder.Property(t => t.FirstName)
-            .HasMaxLength(64)
-            .IsRequired();
+        modelBuilder.Property(t => t.Name)
+            .HasMaxLength(64);
 
-        modelBuilder.Property(t => t.LastName)
-            .HasMaxLength(64)
+        modelBuilder.Property(t => t.GroupType)
             .IsRequired();
 
         modelBuilder.Property(t => t.AddressName)
             .HasMaxLength(128);
 
         modelBuilder.Property(t => t.AddressLine1)
-            .HasMaxLength(128)
-            .IsRequired();
+            .HasMaxLength(128);
 
         modelBuilder.Property(t => t.AddressLine2)
             .HasMaxLength(128);
@@ -34,8 +31,7 @@ internal class AccountAddressMap : PrimaryKeyMappingGuid<AccountAddress>
             .HasMaxLength(128);
 
         modelBuilder.Property(t => t.City)
-            .HasMaxLength(64)
-            .IsRequired();
+            .HasMaxLength(64);
 
         modelBuilder.Property(t => t.Province)
             .HasMaxLength(64);
@@ -43,21 +39,20 @@ internal class AccountAddressMap : PrimaryKeyMappingGuid<AccountAddress>
         modelBuilder.Property(t => t.ProvinceCode)
             .HasMaxLength(64);
 
+        modelBuilder.Property(t => t.PostalCode)
+            .HasMaxLength(16);
+
         modelBuilder.Property(t => t.CountryCode)
             .HasMaxLength(64);
 
         modelBuilder.Property(t => t.Country)
             .HasMaxLength(128);
 
-        modelBuilder.Property(t => t.PostalCode)
-            .HasMaxLength(16);
-
         modelBuilder.Property(t => t.Latitude);
 
         modelBuilder.Property(t => t.Longitude);
 
-        modelBuilder.Property(t => t.AddressType)
-            .IsRequired();
+        modelBuilder.Property(t => t.AddressType);
 
         modelBuilder.Property(t => t.AddressVerified)
             .HasDefaultValue(false)
@@ -67,12 +62,7 @@ internal class AccountAddressMap : PrimaryKeyMappingGuid<AccountAddress>
             .HasDefaultValue(true)
             .IsRequired();
 
-        // One to many relationships
-        modelBuilder
-            .HasOne(aa => aa.Account)
-            .WithMany(ac => ac.AddressBook)
-            .HasForeignKey(aa => aa.AccountId)
-            .OnDelete(DeleteBehavior.Restrict)
+        modelBuilder.Property(t => t.PrimaryAccountId)
             .IsRequired();
     }
 }

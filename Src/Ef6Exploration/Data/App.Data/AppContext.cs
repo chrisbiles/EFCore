@@ -1,5 +1,7 @@
 ﻿using App.Data.Maps.Commerce;
+using App.Data.Maps.Messaging;
 using App.Model.Commerce;
+using App.Model.Messaging;
 using Core.Model.Interface.Data;
 using Helper.Configuration;
 using Microsoft.EntityFrameworkCore;
@@ -13,7 +15,15 @@ namespace App.Data
 
         public AppContext()
         {
-            _connectionString = Settings.GetSetting("AppConnectionString");
+            //Commented this out because an older Config file approach I've used for testing is having problems with .Net 6.  Will figure it out, but
+            //not going to get hung up on the matter at this time
+            //_connectionString = Settings.GetSetting("AppConnectionString");
+
+            //Using LocalDb
+            _connectionString = "Server=(LocalDb)\\MSSQLLocalDB;Database=EfCoreTestDb;Trusted_Connection=True;MultipleActiveResultSets=False;Connection Timeout=30;";
+
+            //Using a local Sql Sever
+            //_connectionString = "Server=.;Database=EfCoreTestDb;Trusted_Connection=True;MultipleActiveResultSets=False;Connection Timeout=30;";
         }
 
         public AppContext(string connectionString)
@@ -38,19 +48,37 @@ namespace App.Data
         /* ----- DB SETS ----- */
         //Commerce
         public DbSet<Account> Accounts { get; set; }
+        public DbSet<AccountAddress> AccountAddresses { get; set; }
+        public DbSet<AccountMessage> AccountMessages { get; set; }
+        public DbSet<AccountToGroup> AccountToGroups { get; set; }
+        public DbSet<Cart> Carts { get; set; }
+        public DbSet<CartItem> CartItems { get; set; }
         public DbSet<Customer> Customers { get; set; }
+        public DbSet<Group> Groups { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderItem> OrderItems { get; set; }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<ProductImage> ProductImages { get; set; }
+        public DbSet<Wallet> Wallets { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             /* ----- MAPPINGS ----- */
             //Commerce
             modelBuilder.ApplyConfiguration(new AccountMap(modelBuilder.Entity<Account>()));
+            modelBuilder.ApplyConfiguration(new AccountAddressMap(modelBuilder.Entity<AccountAddress>()));
+            modelBuilder.ApplyConfiguration(new AccountMessageMap(modelBuilder.Entity<AccountMessage>()));
+            modelBuilder.ApplyConfiguration(new AccountToGroupMap(modelBuilder.Entity<AccountToGroup>()));
+            modelBuilder.ApplyConfiguration(new CartMap(modelBuilder.Entity<Cart>()));
+            modelBuilder.ApplyConfiguration(new CartItemMap(modelBuilder.Entity<CartItem>()));
             modelBuilder.ApplyConfiguration(new CustomerMap(modelBuilder.Entity<Customer>()));
-
-
+            modelBuilder.ApplyConfiguration(new GroupMap(modelBuilder.Entity<Group>()));
+            modelBuilder.ApplyConfiguration(new OrderMap(modelBuilder.Entity<Order>()));
+            modelBuilder.ApplyConfiguration(new OrderItemMap(modelBuilder.Entity<OrderItem>()));
+            modelBuilder.ApplyConfiguration(new ProductMap(modelBuilder.Entity<Product>()));
+            modelBuilder.ApplyConfiguration(new ProductImageMap(modelBuilder.Entity<ProductImage>()));
+            modelBuilder.ApplyConfiguration(new WalletMap(modelBuilder.Entity<Wallet>()));
         }
-
-
 
         //Override of EF Core Save changes to make sure the LastModifiedDateTime property of an entity is always
         //updated to the current utc date/time value when an entity that implements ICore is updated.

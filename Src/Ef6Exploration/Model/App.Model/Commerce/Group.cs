@@ -27,7 +27,7 @@ public class Group : IPrimaryKeyGuid, IAddress
     public AddressType? AddressType { get; set; }
     public bool AddressVerified { get; set; }
 
-    public bool IsActive { get; set; }
+    public bool? IsActive { get; set; }
     public string Name { get; set; }
     public GroupType GroupType { get; set; }
 

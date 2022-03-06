@@ -22,4 +22,5 @@ public class Customer : IPrimaryKeyGuid
 
     public virtual ICollection<AccountMessage> Messages { get; set; } = new List<AccountMessage>();
     public virtual ICollection<Wallet> Wallets { get; set; } = new List<Wallet>();
+    public virtual ICollection<Order> Orders { get; set; } = new List<Order>();
 }

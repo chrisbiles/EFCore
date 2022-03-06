@@ -47,4 +47,6 @@ public class Wallet : IPrimaryKeyGuid, IPerson
 
     public Guid CustomerId { get; set; }
     public virtual Customer Customer { get; set; }
+
+    public virtual ICollection<Order> Orders { get; set; } = new List<Order>();
 }
